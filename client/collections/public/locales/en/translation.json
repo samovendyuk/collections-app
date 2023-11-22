@@ -1,0 +1,39 @@
+{
+  "welcome": "Welcome ",
+  "language": "En",
+  "nav": {
+    "input": "Search",
+    "button": "Search",
+    "singIn": "Sing In",
+    "singUp": "Sing Up"
+  },
+  "login": {
+    "info": "Sing In",
+    "input": {
+      "labelUser": "User Name",
+      "labelPassword": "Password"
+    },
+    "button": "Login"
+  },
+  "registration": {
+    "info": "Registration",
+    "input": {
+      "labelUser": "User Name",
+      "labelPassword": "Password",
+      "labelEmail": "Email"
+    },
+    "button": "Registration"
+  },
+  "logout": "Log Out",
+  "validError": {
+    "name": "Name can't be empty",
+    "password": "Password can't be empty",
+    "email": "Email can't be empty",
+    "passwordError": "Password should be more then 3 symbol and less the 10 symbol",
+    "invalidEmail": "Invalid Email"
+  },
+  "col": {
+    "mycol": "My collections",
+    "create": "Create new collection"
+  }
+}

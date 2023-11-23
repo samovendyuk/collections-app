@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize("collections", "root", "", {
   dialect: "mysql",
-  host: "localhost",
+  host: "https://github.com/render-examples/mysql",
 });
 
 const Users = require("./Users")(sequelize);

@@ -4,7 +4,7 @@ const { users, UserCollections } = require("./model");
 const bodyParser = require("body-parser");
 const multer = require("multer");
 
-const PORT = 4200;
+const PORT = 3306;
 const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));

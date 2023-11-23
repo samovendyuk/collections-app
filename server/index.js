@@ -63,7 +63,6 @@ app.get("/posts", function (req, res) {
 
 app.post("/posts", function (req, res) {
   const post = req.body;
-  console.log(req.body.name);
   UserCollections.create(post)
     .then((post) => {
       if (!res.status(200)) console.log("something wrong");
@@ -74,7 +73,7 @@ app.post("/posts", function (req, res) {
 
 // 1 to many
 users.hasMany(UserCollections, {
-  foreignKey: "avtor_id",
+  foreignKey: "id",
 });
 
 UserCollections.belongsTo(users, {
@@ -91,7 +90,7 @@ app.get("/allCol", function (req, res) {
       ],
     })
     .then((col) => {
-      res.send(JSON.stringify(col));
+      res.send(col);
     })
     .catch((err) => console.log(err));
 });

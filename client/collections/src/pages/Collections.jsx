@@ -1,15 +1,15 @@
-import Cards from "../components/cards/Cards";
+import Personal from "../components/cards/MyCollections";
 import NavbarActive from "../components/navbar/NavbarActive";
 import SideBar from "../components/sidebar/Side";
 
-function HomeActive() {
+function CollectionsPage() {
   return (
     <>
       <NavbarActive />
       <SideBar />
-      <Cards />
+      <Personal />
     </>
   );
 }
 
-export default HomeActive;
+export default CollectionsPage;

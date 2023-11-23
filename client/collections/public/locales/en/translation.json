@@ -16,13 +16,13 @@
     "button": "Login"
   },
   "registration": {
-    "info": "Registration",
+    "info": "Sing Up",
     "input": {
       "labelUser": "User Name",
       "labelPassword": "Password",
       "labelEmail": "Email"
     },
-    "button": "Registration"
+    "button": "Sing Up"
   },
   "logout": "Log Out",
   "validError": {
@@ -34,6 +34,16 @@
   },
   "col": {
     "mycol": "My collections",
-    "create": "Create new collection"
+    "create": "Create new collection",
+    "home": "Home"
+  },
+  "lastAdded": "Last added collections",
+  "post": {
+    "create": "Create new item",
+    "submit": "Submit",
+    "description": "Description",
+    "theme": "Theme",
+    "name": "Name Collection",
+    "file": "File"
   }
 }

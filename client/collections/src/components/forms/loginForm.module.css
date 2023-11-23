@@ -22,3 +22,24 @@
   font-size: 1.5rem;
   width: 100%;
 }
+
+.create {
+  position: absolute;
+  width: 20rem;
+  top: 0;
+  margin: 5rem 24rem;
+}
+
+.create h1 {
+  margin-bottom: 1rem;
+}
+
+.create form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.create button {
+  align-items: center;
+}

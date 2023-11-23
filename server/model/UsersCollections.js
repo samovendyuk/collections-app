@@ -16,7 +16,7 @@ module.exports = function (sequelize) {
       },
       photos: {
         type: Sequelize.STRING(50),
-        allowNull: false,
+        allowNull: true,
       },
       avtor_id: {
         type: Sequelize.INTEGER,

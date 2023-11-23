@@ -1,15 +1,15 @@
-import Cards from "../components/cards/Cards";
+import CreatePost from "../components/forms/FormForCreate";
 import NavbarActive from "../components/navbar/NavbarActive";
 import SideBar from "../components/sidebar/Side";
 
-function HomeActive() {
+function CreateItem() {
   return (
     <>
       <NavbarActive />
       <SideBar />
-      <Cards />
+      <CreatePost />
     </>
   );
 }
 
-export default HomeActive;
+export default CreateItem;

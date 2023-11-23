@@ -10,19 +10,22 @@ const CreatePost = () => {
   const [theme, setTheme] = useState("");
 
   const createPost = async () => {
-    const response = await fetch("http://localhost:4200/posts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-      },
-      body: JSON.stringify({
-        name: name,
-        description: description,
-        theme: theme,
-        photos: "http",
-        avtor_id: 2,
-      }),
-    });
+    const response = await fetch(
+      "https://server-collections-app.onrender.com/posts",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify({
+          name: name,
+          description: description,
+          theme: theme,
+          photos: "http",
+          avtor_id: 2,
+        }),
+      }
+    );
     console.log(theme, name);
     if (!response.ok) {
       console.log("Oops");

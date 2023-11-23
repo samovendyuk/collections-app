@@ -17,16 +17,19 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const singIn = async ({ userName, password }) => {
-    const response = await fetch(`http://localhost:4200/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-      },
-      body: JSON.stringify({
-        name: userName,
-        password: password,
-      }),
-    });
+    const response = await fetch(
+      `https://server-collections-app.onrender.com/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify({
+          name: userName,
+          password: password,
+        }),
+      }
+    );
 
     if (!response.ok) {
       setUser(null);
@@ -52,17 +55,20 @@ export const AuthProvider = ({ children }) => {
   };
 
   const registration = async ({ userName, password, email }) => {
-    const response = await fetch("http://localhost:4200/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-      },
-      body: JSON.stringify({
-        name: userName,
-        email: email,
-        password: password,
-      }),
-    });
+    const response = await fetch(
+      "https://server-collections-app.onrender.com/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify({
+          name: userName,
+          email: email,
+          password: password,
+        }),
+      }
+    );
 
     if (!response.ok) {
       setUser(null);

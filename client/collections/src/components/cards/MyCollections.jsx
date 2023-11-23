@@ -5,7 +5,9 @@ export default function Personal() {
   const [current, setCurent] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:4200/allCol", { method: "GET" })
+    fetch("https://server-collections-app.onrender.com/allCol", {
+      method: "GET",
+    })
       .then((res) => res.json())
       .then((json) => setCol(json));
   }, []);

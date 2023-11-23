@@ -7,10 +7,14 @@ export default function Cards() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4200/users", { method: "GET" })
+    fetch("https://server-collections-app.onrender.com/users", {
+      method: "GET",
+    })
       .then((response) => response.json())
       .then((json) => setUsers(json));
-    fetch("http://localhost:4200/posts", { method: "GET" })
+    fetch("https://server-collections-app.onrender.com/posts", {
+      method: "GET",
+    })
       .then((response) => response.json())
       .then((json) => setCards(json));
   }, []);

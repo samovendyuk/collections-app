@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize("collections", "root", "", {
   dialect: "mysql",
-  host: "mysql-5-lu7b",
+  host: "mysql-5-lu7b:3306",
 });
 
 const Users = require("./Users")(sequelize);

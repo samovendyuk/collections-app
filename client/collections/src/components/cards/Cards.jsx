@@ -7,16 +7,19 @@ export default function Cards() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("https://server-collections-app.onrender.com/users", {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((json) => setUsers(json));
     fetch("https://server-collections-app.onrender.com/posts", {
       method: "GET",
     })
       .then((response) => response.json())
       .then((json) => setCards(json));
+  }, []);
+
+  useEffect(() => {
+    fetch("https://server-collections-app.onrender.com/users", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((json) => setUsers(json));
   }, []);
 
   const sortedCards = cards

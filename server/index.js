@@ -4,7 +4,7 @@ const { users, UserCollections } = require("./model");
 const bodyParser = require("body-parser");
 const multer = require("multer");
 
-const PORT = 3306;
+const PORT = 4200;
 const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -51,10 +51,13 @@ app.post("/login", function (req, res) {
 
 // CRUD for posts
 
-app.get("/posts", function (req, res) {
-  UserCollections.findAll()
+app.get("/collections/latest", function (req, res) {
+  UserCollections.findAll({
+    include: [{ model: users }],
+    limit: 5,
+    order: [["created", "DESC"]],
+  })
     .then((posts) => {
-      console.log(posts);
       if (!res.status(200)) console.log("something wrong");
       res.send(posts);
     })
@@ -73,14 +76,14 @@ app.post("/posts", function (req, res) {
 
 // 1 to many
 users.hasMany(UserCollections, {
-  foreignKey: "id",
+  foreignKey: "avtor_id",
 });
 
 UserCollections.belongsTo(users, {
   foreignKey: "avtor_id",
 });
 
-app.get("/allCol", function (req, res) {
+app.get("/collections", function (req, res) {
   users
     .findAll({
       include: [
@@ -90,6 +93,7 @@ app.get("/allCol", function (req, res) {
       ],
     })
     .then((col) => {
+      console.log(col);
       res.send(col);
     })
     .catch((err) => console.log(err));

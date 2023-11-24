@@ -4,16 +4,16 @@ import { useTranslation } from "react-i18next";
 export default function Cards() {
   const { t } = useTranslation();
   const [cards, setCards] = useState([]);
-  const [users, setUsers] = useState([]);
+  console.log(process.env.REACT_APP_LOCAL);
 
   useEffect(() => {
-    fetch("https://server-collections-app.onrender.com/posts", {
+    fetch("https://server-collections-app.onrender.com/collections/latest", {
       method: "GET",
     })
       .then((response) => response.json())
       .then((json) => setCards(json));
   }, []);
-
+  console.log(cards);
   const sortedCards = cards
     .slice(cards.length - 5, cards.length)
     .sort((a, b) => a.created - b.created)
@@ -43,7 +43,7 @@ export default function Cards() {
                 }}
               >
                 <div class="card-body">
-                  <h5 class="card-title">{card.avtor_id}</h5>
+                  <h5 class="card-title">{card.User.name}</h5>
                   <p class="card-text">{card.description}</p>
                   <button type="button" class="btn btn-primary">
                     See more...

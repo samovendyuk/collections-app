@@ -13,11 +13,6 @@ export default function Cards() {
       .then((response) => response.json())
       .then((json) => setCards(json));
   }, []);
-  console.log(cards);
-  const sortedCards = cards
-    .slice(cards.length - 5, cards.length)
-    .sort((a, b) => a.created - b.created)
-    .reverse();
 
   return (
     <>
@@ -32,8 +27,8 @@ export default function Cards() {
           gap: "2rem",
         }}
       >
-        {sortedCards
-          ? sortedCards.map((card) => (
+        {cards
+          ? cards.map((card) => (
               <div
                 key={card.id}
                 class="card"

@@ -14,14 +14,6 @@ export default function Cards() {
       .then((json) => setCards(json));
   }, []);
 
-  useEffect(() => {
-    fetch("https://server-collections-app.onrender.com/users", {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((json) => setUsers(json));
-  }, []);
-
   const sortedCards = cards
     .slice(cards.length - 5, cards.length)
     .sort((a, b) => a.created - b.created)
@@ -51,7 +43,7 @@ export default function Cards() {
                 }}
               >
                 <div class="card-body">
-                  <h5 class="card-title">{users[card.avtor_id - 1].name}</h5>
+                  <h5 class="card-title">{card.avtor_id}</h5>
                   <p class="card-text">{card.description}</p>
                   <button type="button" class="btn btn-primary">
                     See more...
